@@ -13,18 +13,35 @@ Education
 ======
 B.S. in Pscyhological & Brain Sciences, Washington Unviersity in St. Louis, 2021
 
-Work experience
+Research experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Digital Mental Health Speicalist
+  * University of California, Irvine
+  * Mentor: Stephen Schueller, PhD
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Research Consultant
+  * Liquid Amber
+  * Mentor: Acacia Parks, PhD
   
+* Research Assistant
+  * Twill Therapeutics
+  * Mentor: Eliane Boucher, PhD
+  * Mentor: Rob Montgomery, MS
+
+* Research Intern
+  * Harvard, BIDMC
+  * PI: John Torous, MD MBI
+ 
+* Independent Study
+  * Washington University in St. Louis, Emotion & Mental Health Lab
+  * PI: Renee Thompson, PhD
+  * Mentor: Natasha Bailen, PhD
+
+* Clinical Research Coordinator & Clinical Research Data Coordinator
+  * Washington University School of Medicine, Division of Geriatrics & Nutritional Sciences
+  * PI: Samuel Klein, MD
+
+
 Skills
 ======
 * Skill 1
