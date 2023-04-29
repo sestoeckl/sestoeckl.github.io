@@ -1,14 +1,12 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About Me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-
-About Me
 ======
 Hi there! I'm Sarah Elizabeth (SE for short), a researcher at the intersection of psychology and technology. I am passionate about enhancing our understanding of how technology and digital environments impact human behavior, mental health, and well-being. With a background in both psychology and programming, I am committed to exploring cyberpsychology, digital mental health, human-computer interaction, and implementation science.
 
