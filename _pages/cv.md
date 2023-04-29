@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-![SE STOECKL CV PDF](/assets/files/SEStoeckl_cv.pdf)
+![SE Stoeckl cv](/assets/pages/SEStoeckl_cv.pdf)
