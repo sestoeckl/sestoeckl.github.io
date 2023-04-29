@@ -18,4 +18,4 @@ As a proponent of implementation science, I am committed to translating evidence
 
 By developing and implementing evidence-based digital mental health interventions built upon community-informed research, we can break down barriers, reduce stigma, and provide personalized, affordable care– ultimately fostering more inclusive and accessible mental health and digital landscapes.
 
-I am always excited to connect with others who share my passion for digital mental health and research. Please feel free to reach out if you’d like to discuss potential collaborations or simply exchange insights. Together, let's push the boundaries of psychology and technology to create a healthier, more connected future.
+I am always excited to connect with others who share my passion for digital mental health and research. Please feel free to reach out if you’d like to discuss potential collaborations or simply exchange insights.
