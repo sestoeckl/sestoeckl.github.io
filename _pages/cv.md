@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-![SE Stoeckl cv](/sestoeckl.github.io/blob/master/_pages/SEStoeckl_cv.pdf)
+![Download here](https://github.com/sestoeckl/sestoeckl.github.io/blob/master/_pages/SEStoeckl_cv.pdf))
