@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Sarah  Elizabeth Stoeckl"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : "SE Stoeckl"
 description              : &description "Aspiring Clinical Psychology PhD Student"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://sestoeckl.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/home"
