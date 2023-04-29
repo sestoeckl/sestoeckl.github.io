@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.S. in Pscyhological & Brain Sciences, Washington Unviersity in St. Louis, 2021
+B.S. in Pscyhological & Brain Sciences, Washington Unviersity in St. Louis, 2021
 
 Work experience
 ======
