@@ -3,11 +3,13 @@ main:
   - title: "Research Experience"
     url: /research/
 
+  - title: "CV"
+    url: /cv/
+    
   - title: "Portfolio"
     url: /portfolio/    
         
   - title: "What I'm Reading"
     url: /articles/
     
-  - title: "CV"
-    url: /cv/
+
