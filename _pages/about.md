@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-======
+
 Hi there! I'm Sarah Elizabeth (SE for short), a researcher at the intersection of psychology and technology. I am passionate about enhancing our understanding of how technology and digital environments impact human behavior, mental health, and well-being. With a background in both psychology and programming, I am committed to exploring cyberpsychology, digital mental health, human-computer interaction, and implementation science.
 
 My research interests are fueled by the conviction that the interconnectivity between humans and technology leads to an inextricable link between technology and mental helath. By investigating the motivations, experiences, and effects surrounding human-technology interactions, I aim to raise and address critical questions that will help shape our understanding of this rapidly evolving landscape. My interests ecompass the psychological and ethical implications of digital mental health interventions and advancing technology like cyborgs, artificial intelligence, and virtual reality. I am particularly interested in developing, implementing, and evaluating innovative technological tools and platforms to improve mental health outcomes and promote overall well-being for individuals, groups, and society. 
