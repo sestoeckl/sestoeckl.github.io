@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Sarah  Elizabeth Stoeckl"
 title_separator          : "-"
 name                     : &name "SE Stoeckl"
-description              : &description "Digital Mental Health Specialist, UC-Irvine"
+description              : &description "Digital Mental Health Specialist, Univerisity of CA-Irvine"
 url                      : "https://sestoeckl.github.io" #https://academicpages.github.io # the base hostname & protocol for your site e.g. 
 baseurl                  : "" # the subpath of your site, e.g. "/home"
 repository               : "sestoeckl/sestoeckl.github.io"
