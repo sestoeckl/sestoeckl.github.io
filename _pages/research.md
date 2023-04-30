@@ -9,13 +9,13 @@ redirect_from:
 
 {% include base_path %}
 CURRENTLY
-* Digital Mental Health Speicalist  05/2023-Present
-  * University of California, Irvine
+###Digital Mental Health Speicalist
+* University of California, Irvine    _05/2023-Present_
   * [Help@Hand Project](https://helpathandca.org/), Implementation Core
   * Mentor: [Stephen Schueller, PhD](https://faculty.sites.uci.edu/schueller/)
 
-* Research Consultant   03/2023-Present
-  * [Liquid Amber Consulting](https://liquidamber.consulting)
+###Research Consultant  
+* [Liquid Amber Consulting](https://liquidamber.consulting)    _03/2023-Present_
   * Mentor: [Acacia Parks, PhD](https://www.linkedin.com/in/acacia-parks-3088ba5)
 
 PREVIOUSLY
