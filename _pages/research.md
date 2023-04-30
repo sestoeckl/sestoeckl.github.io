@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-CURRENTLY
+##Presently
 ###Digital Mental Health Speicalist
 * University of California, Irvine    _05/2023-Present_
   * [Help@Hand Project](https://helpathandca.org/), Implementation Core
@@ -18,9 +18,9 @@ CURRENTLY
 * [Liquid Amber Consulting](https://liquidamber.consulting)    _03/2023-Present_
   * Mentor: [Acacia Parks, PhD](https://www.linkedin.com/in/acacia-parks-3088ba5)
 
-PREVIOUSLY
-* Research Assistant    08/2021-03/2023
-  * [Twill Therapeutics](https://www.twill.health), formerly Happify Health
+##Previously
+###Research Assistant    
+* [Twill Therapeutics](https://www.twill.health), formerly Happify Health   _08/2021-03/2023_
   * Mentor: [Eliane Boucher, PhD](https://www.linkedin.com/in/eliane-boucher-092816181)
   * Mentor: [Rob Montgomery, MS](https://www.linkedin.com/in/rob-montgomery-ma-868668b7)
 
