@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 ### PEER-REVIEWED MANUSCRIPTS
-Stoeckl, S. E., Torres-Hernandez, E., Camacho, E., & Torous, J. (2023). Assessing the Dynamics of the Mental Health Apple and Android App Marketplaces. Journal of technology in behavioral science, 1–8. Advance online publication. https://doi.org/10.1007/s41347-023-00300-x
+Stoeckl, S. E., Torres-Hernandez, E., Camacho, E., & Torous, J. (2023). Assessing the Dynamics of the Mental Health Apple and Android App Marketplaces. Journal of technology in behavioral science, 1–8. Advance online publication. https://doi.org/10.1007/s41347-023-00300-x          
 [PDF](https://github.com/sestoeckl/sestoeckl.github.io/blob/master/files/Assessing%20the%20Dynamics%20of%20the%20Mental%20Health%20Apple%20and%20Android%20App%20Marketplaces.pdf)
 
 Boucher, E., Honomichl, R., Ward, H., Powell, T., Stoeckl, S. E., & Parks, A. (2022). The effects of a digital well-being intervention on older adults: retrospective analysis of real-world user data. JMIR Aging, 5(3), e39851. https://doi.org/10.2196/39851  
