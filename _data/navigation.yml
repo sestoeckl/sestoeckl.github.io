@@ -5,15 +5,3 @@ main:
     
   - title: "Research Experience"
     url: /research/
-
-  - title: "Publications"
-    url: /publications/
-    
-  - title: "Talks"
-    url: /talks/  
-        
-  - title: "Portfolio"
-    url: /portfolio/    
-        
-  - title: "What I'm Reading"
-    url: /reading/
