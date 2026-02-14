@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SE Stoeckl — Research at the Intersection of Technology &amp; Psychology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #F6F3EE;
+            --color-surface: #FFFDF9;
+            --color-text: #2C2926;
+            --color-text-secondary: #6B6560;
+            --color-accent: #B85C38;
+            --color-accent-light: #D4845F;
+            --color-border: #E0DBD4;
+            --color-highlight: #EDE8DF;
+            --font-display: 'DM Serif Display', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAV ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(246, 243, 238, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--color-border);
+            transition: box-shadow 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0.9rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--color-accent); }
+        .nav-links a:hover::after { width: 100%; }
+
+        /* ─── MOBILE NAV ─── */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--color-text);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(184,92,56,0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(184,92,56,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 740px;
+            position: relative;
+        }
+
+        .hero-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards 0.2s;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            line-height: 1.2;
+            color: var(--color-text);
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards 0.35s;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .hero-intro {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards 0.5s;
+        }
+
+        .hero-cta {
+            margin-top: 2.4rem;
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.7s ease forwards 0.65s;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.6rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-light);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(184,92,56,0.25);
+        }
+
+        .btn-outline {
+            border: 1.5px solid var(--color-border);
+            color: var(--color-text);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        .btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ─── SECTIONS ─── */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        /* ─── RESEARCH ─── */
+        #research {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .research-areas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 2.2rem;
+        }
+
+        .research-card {
+            padding: 2rem;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--color-accent);
+            transition: height 0.4s ease;
+        }
+
+        .research-card:hover::before {
+            height: 100%;
+        }
+
+        .research-card:hover {
+            border-color: var(--color-accent-light);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transform: translateY(-2px);
+        }
+
+        .research-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .research-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            margin-bottom: 0.7rem;
+            color: var(--color-text);
+        }
+
+        .research-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+        }
+
+        /* ─── ABOUT ─── */
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            line-height: 1.85;
+        }
+
+        .about-text + .about-text {
+            margin-top: 1.2rem;
+        }
+
+        .about-details {
+            margin-top: 2.4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.6rem;
+        }
+
+        .detail-item {
+            padding: 1.4rem 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .detail-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 0.35rem;
+        }
+
+        .detail-value {
+            font-size: 0.95rem;
+            color: var(--color-text);
+        }
+
+        /* ─── PUBLICATIONS / PROJECTS ─── */
+        #work {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .work-item {
+            padding: 1.8rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .work-item:last-child {
+            border-bottom: none;
+        }
+
+        .work-type {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .work-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .work-desc {
+            font-size: 0.92rem;
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+        }
+
+        .work-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.7rem;
+            font-size: 0.85rem;
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: gap 0.2s ease;
+        }
+
+        .work-link:hover {
+            gap: 0.6rem;
+        }
+
+        /* ─── CONTACT ─── */
+        .contact-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.3rem;
+            border: 1.5px solid var(--color-border);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateY(-1px);
+        }
+
+        .contact-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            border-top: 1px solid var(--color-border);
+            letter-spacing: 0.02em;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── MOBILE ─── */
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(246, 243, 238, 0.97);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 1.2rem 2rem 1.6rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--color-border);
+            }
+
+            .nav-links.open { display: flex; }
+
+            .hero {
+                min-height: auto;
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            section { padding: 3.5rem 1.5rem; }
+
+            .research-areas {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .about-details {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.9rem; }
+            .nav-inner { padding: 0.8rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="nav">
+    <div class="nav-inner">
+        <a href="#" class="nav-name">SE Stoeckl</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#research" onclick="document.querySelector('.nav-links').classList.remove('open')">Research</a></li>
+            <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
+            <li><a href="#work" onclick="document.querySelector('.nav-links').classList.remove('open')">Work</a></li>
+            <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-label">PhD Student · UC Irvine</div>
+        <h1 class="hero-title">Research at the intersection of <em>technology</em> &amp;&nbsp;<em>psychology</em></h1>
+        <p class="hero-intro">
+            I'm a Clinical Psychology PhD student in Dr. Stephen Schueller's Technology and Mental Health Lab, studying how technologies shape mental health, well-being, and development — with a focus on adolescent use of generative AI.
+        </p>
+        <div class="hero-cta">
+            <a href="#research" class="btn btn-primary">
+                Explore my research
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#" class="btn btn-outline">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                Download CV
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ─── RESEARCH ─── -->
+<section id="research">
+    <div class="section-inner reveal">
+        <div class="section-label">Research Focus</div>
+        <h2 class="section-title">Bridging Clinical Psychology, HCI, and Implementation Science</h2>
+        <p class="about-text">My work examines how technologies shape mental health, well-being, and development. I bring over a decade of professional software engineering experience to my academic research, creating an interdisciplinary perspective that bridges technical implementation with clinical and developmental psychology.</p>
+        <div class="research-areas">
+            <div class="research-card">
+                <span class="icon">🧠</span>
+                <h3>AI &amp; Adolescent Development</h3>
+                <p>Studying how young people use technologies like generative AI — including relational tools like virtual friends and mental health chatbots — and how these interactions influence social behavior, development, and well-being.</p>
+            </div>
+            <div class="research-card">
+                <span class="icon">⚙️</span>
+                <h3>Digital Mental Health Interventions</h3>
+                <p>Designing and evaluating digital mental health tools, particularly those integrating fine-tuned large language models, grounded in psychological theory and empirical evidence.</p>
+            </div>
+            <div class="research-card">
+                <span class="icon">🔬</span>
+                <h3>Measurement &amp; Methods</h3>
+                <p>Developing rigorous measurement approaches — including EMA protocols and survey design — that can distinguish between different patterns of AI use and their differential effects on youth.</p>
+            </div>
+            <div class="research-card">
+                <span class="icon">⚖️</span>
+                <h3>Ethics &amp; Responsible AI</h3>
+                <p>Committed to developing tools that are not only effective and widely accessible, but also ethically sound — maintaining epistemological agnosticism while the evidence base develops.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+    <div class="section-inner reveal">
+        <div class="section-label">About</div>
+        <h2 class="section-title">From Software Engineering to Clinical Science</h2>
+        <p class="about-text">
+            Before entering academia, I spent over a decade as a professional software engineer — an experience that deeply informs how I approach research questions about technology and human well-being. I came to clinical psychology driven by a desire to understand not just how to build technology, but how it shapes the people who use it.
+        </p>
+        <p class="about-text">
+            My unique position spanning both fields allows me to critically evaluate AI systems from a technical perspective while centering the psychological and developmental needs of users, particularly adolescents navigating a rapidly evolving digital landscape.
+        </p>
+        <div class="about-details">
+            <div class="detail-item">
+                <div class="detail-label">Program</div>
+                <div class="detail-value">PhD, Clinical Psychology</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Institution</div>
+                <div class="detail-value">University of California, Irvine</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Lab</div>
+                <div class="detail-value">Technology &amp; Mental Health Lab</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Advisor</div>
+                <div class="detail-value">Dr. Stephen Schueller</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ─── WORK ─── -->
+<section id="work">
+    <div class="section-inner reveal">
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">Projects &amp; Publications</h2>
+
+        <div class="work-item">
+            <div class="work-type">Project</div>
+            <div class="work-title">iReflect</div>
+            <div class="work-desc">A well-being journaling app for software developers grounded in Self-Determination Theory, incorporating autonomy, competence, and relatedness metrics alongside energy and stress measures tied to daily check-in scores.</div>
+            <!-- <a href="#" class="work-link">Learn more →</a> -->
+        </div>
+
+        <div class="work-item">
+            <div class="work-type">Thesis Research</div>
+            <div class="work-title">AI Use, Well-Being, and Social Disconnection Among Youth</div>
+            <div class="work-desc">Examining patterns of generative AI use among approximately 3,000 adolescents to understand relationships between AI engagement, psychological well-being, and social connection — distinguishing instrumental from relational AI use.</div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-type">Workshop</div>
+            <div class="work-title">Youth × AI Safety</div>
+            <div class="work-desc">Contributing to conversations around adolescent safety in AI contexts, drawing on both technical expertise and clinical developmental perspectives.</div>
+        </div>
+
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--color-text-secondary); font-style: italic;">
+            Additional publications and presentations coming soon. See CV for full details.
+        </p>
+    </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+    <div class="section-inner reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="about-text">I'm always interested in conversations about the intersection of technology and mental health, collaborative research opportunities, or questions about my work.</p>
+        <div class="contact-links">
+            <a href="mailto:your@email.edu" class="contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                Email
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://twitter.com/yourhandle" class="contact-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Twitter / X
+            </a>
+            <a href="https://scholar.google.com" class="contact-link" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                Google Scholar
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 SE Stoeckl. Built with care, hosted on GitHub Pages.
+</footer>
+
+<script>
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Reveal on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
