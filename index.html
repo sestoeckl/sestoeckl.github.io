@@ -280,18 +280,19 @@
         .research-areas {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
-            margin-top: 2.2rem;
+            gap: 1.2rem;
+            margin-top: 2rem;
         }
 
         .research-card {
-            padding: 2rem;
+            padding: 1.4rem 2rem;
             background: var(--color-bg);
             border: 1px solid var(--color-border);
             border-radius: 6px;
             transition: all 0.35s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .research-card::before {
@@ -312,7 +313,40 @@
         .research-card:hover {
             border-color: var(--color-accent-light);
             box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            transform: translateY(-2px);
+        }
+
+        .research-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .research-card-header .card-chevron {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            color: var(--color-text-secondary);
+            transition: transform 0.3s ease;
+            margin-top: 0.2rem;
+        }
+
+        .research-card.card-open .card-chevron {
+            transform: rotate(180deg);
+        }
+
+        .research-card-body {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            margin-top: 0;
+        }
+
+        .research-card.card-open .research-card-body {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 0.8rem;
         }
 
         .research-card .icon {
@@ -323,9 +357,10 @@
 
         .research-card h3 {
             font-family: var(--font-display);
-            font-size: 1.15rem;
-            margin-bottom: 0.7rem;
+            font-size: 1.05rem;
+            margin-bottom: 0;
             color: var(--color-text);
+            line-height: 1.4;
         }
 
         .research-card p {
@@ -732,25 +767,53 @@
         <h2 class="section-title" style="margin-bottom: 1rem;">Bridging Clinical Psychology, Developmental Science, and Human-Computer Interaction</h2>
         <p class="about-text">Technology is reshaping how people connect, cope, and seek support. I study what that means for social functioning, development, and well-being.</p>
         <div class="research-areas">
-            <div class="research-card">
-                <div class="work-type" style="margin-bottom: 0.4rem;">MA Thesis</div>
-                <h3>Generative AI Use Among Adolescents and Associations with Social and Psychological Well-being</h3>
-                <p>Using probability-based survey data from over 3,000 younger adolescents to provide the first population-level characterization of relational AI use — virtual friends, mental health chatbots, AI companions. Testing preregistered hypotheses about whether social disconnection predicts virtual-friend use and lower well-being predicts mental health chatbot use, drawing on social compensation and emotion regulation frameworks.</p>
+            <div class="research-card" onclick="this.classList.toggle('card-open')">
+                <div class="research-card-header">
+                    <div>
+                        <div class="work-type" style="margin-bottom: 0.3rem;">MA Thesis</div>
+                        <h3>Generative AI Use Among Adolescents and Associations with Social and Psychological Well-being</h3>
+                    </div>
+                    <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="research-card-body">
+                    <p>Using probability-based survey data from over 3,000 younger adolescents to provide the first population-level characterization of relational AI use — virtual friends, mental health chatbots, AI companions. Testing preregistered hypotheses about whether social disconnection predicts virtual-friend use and lower well-being predicts mental health chatbot use, drawing on social compensation and emotion regulation frameworks.</p>
+                </div>
             </div>
-            <div class="research-card">
-                <div class="work-type" style="margin-bottom: 0.4rem;">Intensive Longitudinal Study</div>
-                <h3>Online Communication and Daily Peer Belonging in Early Adolescence</h3>
-                <p>An ecological momentary assessment study modeling within-person daily fluctuations in adolescents' communication with close others and sense of belongingness over 14-day EMA bursts. Disaggregates relationally-targeted communication from overall digital volume to understand what specifically matters for connection — with planned expansion to capture AI-directed communication.</p>
+            <div class="research-card" onclick="this.classList.toggle('card-open')">
+                <div class="research-card-header">
+                    <div>
+                        <div class="work-type" style="margin-bottom: 0.3rem;">Intensive Longitudinal Study</div>
+                        <h3>Online Communication and Daily Peer Belonging in Early Adolescence</h3>
+                    </div>
+                    <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="research-card-body">
+                    <p>An ecological momentary assessment study modeling within-person daily fluctuations in adolescents' communication with close others and sense of belongingness over 14-day EMA bursts. Disaggregates relationally-targeted communication from overall digital volume to understand what specifically matters for connection — with planned expansion to capture AI-directed communication.</p>
+                </div>
             </div>
-            <div class="research-card">
-                <div class="work-type" style="margin-bottom: 0.4rem;">Computational Research</div>
-                <h3>Few-Shot Classification of Help Seeking in Adolescent Texts</h3>
-                <p>Developing few-shot classifiers to detect help-seeking, help-providing, and mental health content in 90 days of naturalistic adolescent typed text — over 700,000 entries and nearly 3 million words. Addresses a core methodological challenge: relevant signals are sparse (fewer than 2% of messages reference mental health) yet potentially consequential for understanding youth well-being.</p>
+            <div class="research-card" onclick="this.classList.toggle('card-open')">
+                <div class="research-card-header">
+                    <div>
+                        <div class="work-type" style="margin-bottom: 0.3rem;">Computational Research</div>
+                        <h3>Few-Shot Classification of Help Seeking in Adolescent Texts</h3>
+                    </div>
+                    <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="research-card-body">
+                    <p>Developing few-shot classifiers to detect help-seeking, help-providing, and mental health content in 90 days of naturalistic adolescent typed text — over 700,000 entries and nearly 3 million words. Addresses a core methodological challenge: relevant signals are sparse (fewer than 2% of messages reference mental health) yet potentially consequential for understanding youth well-being.</p>
+                </div>
             </div>
-            <div class="research-card">
-                <div class="work-type" style="margin-bottom: 0.4rem;">Applied Project</div>
-                <h3>Developer Well-Being Reflection Tool</h3>
-                <p>A theory-driven journaling tool for software developers grounded in Self-Determination Theory, incorporating autonomy, competence, and relatedness alongside energy and stress metrics. Designed to support structured reflection on well-being tied to daily work experiences.</p>
+            <div class="research-card" onclick="this.classList.toggle('card-open')">
+                <div class="research-card-header">
+                    <div>
+                        <div class="work-type" style="margin-bottom: 0.3rem;">Applied Project</div>
+                        <h3>Developer Well-Being Reflection Tool</h3>
+                    </div>
+                    <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="research-card-body">
+                    <p>A theory-driven journaling tool for software developers grounded in Self-Determination Theory, incorporating autonomy, competence, and relatedness alongside energy and stress metrics. Designed to support structured reflection on well-being tied to daily work experiences.</p>
+                </div>
             </div>
         </div>
         <div style="margin-top: 2.2rem; text-align: center;">
