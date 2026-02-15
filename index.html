@@ -268,6 +268,7 @@
             font-size: clamp(1.6rem, 3vw, 2.1rem);
             margin-bottom: 2rem;
             color: var(--color-text);
+            line-height: 1.25;
         }
 
         /* ─── RESEARCH ─── */
@@ -275,6 +276,7 @@
             background: var(--color-surface);
             border-top: 1px solid var(--color-border);
             border-bottom: 1px solid var(--color-border);
+            scroll-margin-top: 80px;
         }
 
         .research-areas {
@@ -370,6 +372,10 @@
         }
 
         /* ─── ABOUT ─── */
+        #about {
+            scroll-margin-top: 80px;
+        }
+
         .about-text {
             font-size: 1.05rem;
             color: var(--color-text-secondary);
@@ -416,6 +422,7 @@
         /* ─── CONTACT ─── */
         #contact {
             border-top: 1px solid var(--color-border);
+            scroll-margin-top: 80px;
         }
 
         .work-item {
@@ -764,9 +771,9 @@
 <section id="research">
     <div class="section-inner reveal">
         <div class="section-label">Research</div>
-        <h2 class="section-title" style="margin-bottom: 1rem;">Bridging Clinical Psychology, Developmental Science, and Human-Computer Interaction</h2>
-        <p class="about-text">Technology is reshaping how people connect, cope, and seek support. I study what that means for social functioning, development, and well-being.</p>
-        <div class="research-areas">
+        <h2 class="section-title" style="margin-bottom: 0.6rem;">Bridging Clinical Psychology, Developmental Science, and Human-Computer Interaction</h2>
+        <p class="about-text" style="margin-bottom: 0;">Technology is reshaping how people connect, cope, and seek support. I study what that means for social functioning, development, and well-being.</p>
+        <div class="research-areas" style="margin-top: 1.4rem;">
             <div class="research-card" onclick="this.classList.toggle('card-open')">
                 <div class="research-card-header">
                     <div>
