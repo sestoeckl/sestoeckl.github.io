@@ -7,14 +7,10 @@
     <meta name="description" content="SE Stoeckl is a Clinical Psychology PhD student at UC Irvine researching how adolescents use generative AI and its impact on social development and well-being.">
     <meta name="author" content="SE Stoeckl">
     <link rel="canonical" href="https://sestoeckl.github.io/">
-
-    <!-- Open Graph -->
     <meta property="og:title" content="SE Stoeckl — Research at the Intersection of Technology & Psychology">
     <meta property="og:description" content="Clinical Psychology PhD student at UC Irvine researching adolescent generative AI use, social development, and well-being.">
     <meta property="og:url" content="https://sestoeckl.github.io/">
     <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="SE Stoeckl — Technology & Psychology Research">
     <meta name="twitter:description" content="Clinical Psychology PhD student at UC Irvine researching adolescent generative AI use, social development, and well-being.">
@@ -36,12 +32,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: var(--font-body);
             background-color: var(--color-bg);
@@ -53,703 +44,145 @@
 
         /* ─── NAV ─── */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             background: rgba(246, 243, 238, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--color-border);
             transition: box-shadow 0.3s ease;
         }
-
-        nav.scrolled {
-            box-shadow: 0 1px 12px rgba(0,0,0,0.06);
-        }
-
-        .nav-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0.9rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-name {
-            font-family: var(--font-display);
-            font-size: 1.15rem;
-            color: var(--color-text);
-            text-decoration: none;
-            letter-spacing: 0.01em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text-secondary);
-            font-size: 0.88rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            transition: color 0.25s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 1.5px;
-            background: var(--color-accent);
-            transition: width 0.3s ease;
-        }
-
+        nav.scrolled { box-shadow: 0 1px 12px rgba(0,0,0,0.06); }
+        .nav-inner { max-width: 900px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-name { font-family: var(--font-display); font-size: 1.15rem; color: var(--color-text); text-decoration: none; letter-spacing: 0.01em; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--color-text-secondary); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.25s ease; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1.5px; background: var(--color-accent); transition: width 0.3s ease; }
         .nav-links a:hover { color: var(--color-accent); }
         .nav-links a:hover::after { width: 100%; }
-
-        /* ─── MOBILE NAV ─── */
-        .nav-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .nav-toggle span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: var(--color-text);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-            border-radius: 2px;
-        }
+        .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+        .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: all 0.3s ease; border-radius: 2px; }
 
         /* ─── HERO ─── */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 2rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -30%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(44,74,110,0.06) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -20%;
-            left: -15%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(44,74,110,0.04) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 740px;
-            position: relative;
-        }
-
-        .hero-label {
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards 0.2s;
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5vw, 3.4rem);
-            line-height: 1.2;
-            color: var(--color-text);
-            margin-bottom: 1.8rem;
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards 0.35s;
-        }
-
-        .hero-title em {
-            font-style: italic;
-            color: var(--color-accent);
-        }
-
-        .hero-intro {
-            font-size: 1.12rem;
-            line-height: 1.8;
-            color: var(--color-text-secondary);
-            max-width: 600px;
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards 0.5s;
-        }
-
-        .hero-cta {
-            margin-top: 2.4rem;
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeUp 0.7s ease forwards 0.65s;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.7rem 1.6rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: var(--color-accent);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--color-accent-light);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(44,74,110,0.25);
-        }
-
-        .btn-outline {
-            border: 1.5px solid var(--color-border);
-            color: var(--color-text);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
-        }
-
-        .btn svg {
-            width: 16px;
-            height: 16px;
-        }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 2rem 3rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(44,74,110,0.06) 0%, transparent 70%); pointer-events: none; }
+        .hero::after  { content: ''; position: absolute; bottom: -20%; left: -15%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(44,74,110,0.04) 0%, transparent 70%); pointer-events: none; }
+        .hero-content { max-width: 740px; position: relative; }
+        .hero-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s; }
+        .hero-title { font-family: var(--font-display); font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.2; color: var(--color-text); margin-bottom: 1.8rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.35s; }
+        .hero-title em { font-style: italic; color: var(--color-accent); }
+        .hero-intro { font-size: 1.12rem; line-height: 1.8; color: var(--color-text-secondary); max-width: 600px; opacity: 0; animation: fadeUp 0.7s ease forwards 0.5s; }
+        .hero-cta { margin-top: 2.4rem; display: flex; gap: 1.2rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s ease forwards 0.65s; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.6rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em; transition: all 0.3s ease; }
+        .btn-primary { background: var(--color-accent); color: #fff; }
+        .btn-primary:hover { background: var(--color-accent-light); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(44,74,110,0.25); }
+        .btn-outline { border: 1.5px solid var(--color-border); color: var(--color-text); background: transparent; }
+        .btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); }
+        .btn svg { width: 16px; height: 16px; }
 
         /* ─── SECTIONS ─── */
-        section {
-            padding: 2rem 2rem 3.5rem;
-        }
-
-        .section-inner {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 0.6rem;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.6rem, 3vw, 2.1rem);
-            margin-bottom: 2rem;
-            color: var(--color-text);
-            line-height: 1.25;
-        }
+        section { padding: 2rem 2rem 3.5rem; }
+        .section-inner { max-width: 800px; margin: 0 auto; }
+        .section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.6rem; }
+        .section-title { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.1rem); margin-bottom: 2rem; color: var(--color-text); line-height: 1.25; }
 
         /* ─── RESEARCH ─── */
-        #research {
-            background: var(--color-surface);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-            scroll-margin-top: 56px;
-        }
+        #research { background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); scroll-margin-top: 56px; }
 
-        .research-areas {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-            margin-top: 2rem;
-        }
+        /* ─── RESEARCH CARDS ─── */
+        .research-areas { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .research-areas-single { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+        .research-areas-single .research-card { grid-column: 1 / 2; }
+        .research-card { padding: 1.4rem 2rem; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 6px; transition: all 0.35s ease; position: relative; overflow: hidden; cursor: pointer; }
+        .research-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--color-accent); transition: height 0.4s ease; }
+        .research-card:hover::before { height: 100%; }
+        .research-card:hover { border-color: var(--color-accent-light); box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+        .research-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; }
+        .research-card-header .card-chevron { width: 18px; height: 18px; flex-shrink: 0; color: var(--color-text-secondary); transition: transform 0.3s ease; margin-top: 0.2rem; }
+        .research-card.card-open .card-chevron { transform: rotate(180deg); }
+        .research-card-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.3s ease, margin 0.3s ease; margin-top: 0; }
+        .research-card.card-open .research-card-body { max-height: 800px; opacity: 1; margin-top: 0.8rem; }
+        .research-card h3 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0; color: var(--color-text); line-height: 1.4; }
+        .research-card p { font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.65; }
+        .work-type { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.4rem; }
 
-        .research-card {
-            padding: 1.4rem 2rem;
-            background: var(--color-bg);
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            transition: all 0.35s ease;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .research-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 0;
-            background: var(--color-accent);
-            transition: height 0.4s ease;
-        }
-
-        .research-card:hover::before {
-            height: 100%;
-        }
-
-        .research-card:hover {
-            border-color: var(--color-accent-light);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-        }
-
-        .research-card-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 0.5rem;
-        }
-
-        .research-card-header .card-chevron {
-            width: 18px;
-            height: 18px;
-            flex-shrink: 0;
-            color: var(--color-text-secondary);
-            transition: transform 0.3s ease;
-            margin-top: 0.2rem;
-        }
-
-        .research-card.card-open .card-chevron {
-            transform: rotate(180deg);
-        }
-
-        .research-card-body {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-            margin-top: 0;
-        }
-
-        .research-card.card-open .research-card-body {
-            max-height: 300px;
-            opacity: 1;
-            margin-top: 0.8rem;
-        }
-
-        .research-card .icon {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-            display: block;
-        }
-
-        .research-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.05rem;
-            margin-bottom: 0;
-            color: var(--color-text);
-            line-height: 1.4;
-        }
-
-        .research-card p {
-            font-size: 0.92rem;
-            color: var(--color-text-secondary);
-            line-height: 1.65;
-        }
+        /* ─── STUDY CONTEXT FOOTNOTE ─── */
+        .study-context { margin-top: 0.75rem; padding-top: 0.65rem; border-top: 1px solid var(--color-border); }
+        .study-context-toggle { display: inline-flex; align-items: center; gap: 0.35rem; background: none; border: none; cursor: pointer; padding: 0; font-size: 0.73rem; font-weight: 500; color: var(--color-text-secondary); font-family: var(--font-body); letter-spacing: 0.01em; transition: color 0.2s ease; }
+        .study-context-toggle:hover { color: var(--color-accent); }
+        .study-context-toggle svg { width: 12px; height: 12px; transition: transform 0.25s ease; flex-shrink: 0; }
+        .study-context-toggle.open svg { transform: rotate(180deg); }
+        .study-context-label-link { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; text-decoration-color: transparent; transition: text-decoration-color 0.2s ease; }
+        .study-context-label-link:hover { text-decoration-color: var(--color-accent); }
+        .study-context-body { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.45s ease, opacity 0.3s ease, margin 0.3s ease; margin-top: 0; }
+        .study-context-body.open { max-height: 400px; opacity: 1; margin-top: 0.5rem; }
+        .study-context-body p { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.6; font-style: italic; }
 
         /* ─── ABOUT ─── */
-        #about {
-            scroll-margin-top: 56px;
-        }
-
-        .about-text {
-            font-size: 1.05rem;
-            color: var(--color-text-secondary);
-            line-height: 1.85;
-        }
-
-        .about-text + .about-text {
-            margin-top: 1.2rem;
-        }
-
-        .about-details {
-            margin-top: 2.4rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.6rem;
-        }
-
-        .detail-item {
-            padding: 1.4rem 0;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .detail-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 0.35rem;
-        }
-
-        .detail-value {
-            font-size: 0.95rem;
-            color: var(--color-text);
-        }
-
-        /* ─── PUBLICATIONS / PROJECTS ─── */
-        #work {
-            background: var(--color-surface);
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
+        #about { scroll-margin-top: 56px; }
+        .about-text { font-size: 1.05rem; color: var(--color-text-secondary); line-height: 1.85; }
+        .about-text + .about-text { margin-top: 1.2rem; }
+        .about-details { margin-top: 2.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+        .detail-item { padding: 1.4rem 0; border-top: 1px solid var(--color-border); }
+        .detail-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 0.35rem; }
+        .detail-value { font-size: 0.95rem; color: var(--color-text); }
 
         /* ─── CONTACT ─── */
-        #contact {
-            border-top: 1px solid var(--color-border);
-            scroll-margin-top: 56px;
-        }
-
-        .work-item {
-            padding: 1.8rem 0;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .work-item:last-child {
-            border-bottom: none;
-        }
-
-        .work-type {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-            margin-bottom: 0.4rem;
-        }
-
-        .work-title {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            color: var(--color-text);
-            margin-bottom: 0.5rem;
-        }
-
-        .work-desc {
-            font-size: 0.92rem;
-            color: var(--color-text-secondary);
-            line-height: 1.65;
-        }
-
-        .work-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            margin-top: 0.7rem;
-            font-size: 0.85rem;
-            color: var(--color-accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: gap 0.2s ease;
-        }
-
-        .work-link:hover {
-            gap: 0.6rem;
-        }
-
-        /* ─── CONTACT ─── */
-        .contact-links {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.65rem 1.3rem;
-            border: 1.5px solid var(--color-border);
-            border-radius: 4px;
-            text-decoration: none;
-            color: var(--color-text);
-            font-size: 0.88rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
-            transform: translateY(-1px);
-        }
-
-        .contact-link svg {
-            width: 16px;
-            height: 16px;
-        }
+        #contact { border-top: 1px solid var(--color-border); scroll-margin-top: 56px; }
+        .contact-links { display: flex; gap: 1.2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .contact-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.65rem 1.3rem; border: 1.5px solid var(--color-border); border-radius: 4px; text-decoration: none; color: var(--color-text); font-size: 0.88rem; font-weight: 500; transition: all 0.3s ease; }
+        .contact-link:hover { border-color: var(--color-accent); color: var(--color-accent); transform: translateY(-1px); }
+        .contact-link svg { width: 16px; height: 16px; }
 
         /* ─── FOOTER ─── */
-        footer {
-            text-align: center;
-            padding: 2.5rem 2rem;
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            border-top: 1px solid var(--color-border);
-            letter-spacing: 0.02em;
-        }
+        footer { text-align: center; padding: 2.5rem 2rem; font-size: 0.8rem; color: var(--color-text-secondary); border-top: 1px solid var(--color-border); letter-spacing: 0.02em; }
 
         /* ─── ANIMATIONS ─── */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(18px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* ─── EXPERIENCE BARS ─── */
-        .exp-rows {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1.6rem;
-        }
-
-        .exp-row {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        .exp-row-label {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--color-accent);
-        }
-
-        .bar-track {
-            display: flex;
-            height: 36px;
-            border-radius: 5px;
-            overflow: visible;
-            background: var(--color-border);
-        }
-
-        .bar-track.thin {
-            height: 26px;
-        }
-
-        .bar-seg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 0.4rem;
-            font-size: 0.72rem;
-            font-weight: 600;
-            color: #fff;
-            white-space: nowrap;
-            overflow: visible;
-            text-overflow: ellipsis;
-            position: relative;
-            cursor: default;
-            border-right: 1.5px solid rgba(246, 243, 238, 0.5);
-            text-decoration: none;
-        }
-
-        a.bar-seg {
-            cursor: pointer;
-        }
-
-        a.bar-seg:hover {
-            filter: brightness(1.15);
-        }
-
+        .exp-rows { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.6rem; }
+        .exp-row { display: flex; flex-direction: column; gap: 0.35rem; }
+        .exp-row-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent); }
+        .bar-track { display: flex; height: 36px; border-radius: 5px; overflow: visible; background: var(--color-border); }
+        .bar-track.thin { height: 26px; }
+        .bar-seg { display: flex; align-items: center; justify-content: center; padding: 0 0.4rem; font-size: 0.72rem; font-weight: 600; color: #fff; white-space: nowrap; overflow: visible; text-overflow: ellipsis; position: relative; cursor: default; border-right: 1.5px solid rgba(246, 243, 238, 0.5); text-decoration: none; }
+        a.bar-seg { cursor: pointer; }
+        a.bar-seg:hover { filter: brightness(1.15); }
         .bar-seg:last-child { border-right: none; }
         .bar-seg:first-child { border-radius: 5px 0 0 5px; }
-        .bar-seg:last-child { border-radius: 0 5px 5px 0; }
-        .bar-seg:only-child { border-radius: 5px; }
-
-        .bar-seg .seg-tip {
-            display: none;
-            position: absolute;
-            bottom: calc(100% + 8px);
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--color-text);
-            color: #fff;
-            padding: 0.4rem 0.7rem;
-            border-radius: 4px;
-            font-size: 0.72rem;
-            font-weight: 500;
-            white-space: nowrap;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .bar-seg .seg-tip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 5px solid transparent;
-            border-top-color: var(--color-text);
-        }
-
+        .bar-seg:last-child  { border-radius: 0 5px 5px 0; }
+        .bar-seg:only-child  { border-radius: 5px; }
+        .bar-seg .seg-tip { display: none; position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: var(--color-text); color: #fff; padding: 0.4rem 0.7rem; border-radius: 4px; font-size: 0.72rem; font-weight: 500; white-space: nowrap; z-index: 10; pointer-events: none; }
+        .bar-seg .seg-tip::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--color-text); }
         .bar-seg:hover .seg-tip { display: block; }
-
-        /* Academic research: deep navy family */
-        .b-acad-1 { background: #1B3A5C; }
-        .b-acad-2 { background: #2C5478; }
-        .b-acad-3 { background: #3D6E94; }
-        .b-acad-4 { background: #5088AE; }
-        /* Industry research: steel blue family */
-        .b-ind-1 { background: #2B6694; }
-        .b-ind-2 { background: #6A9DC4; }
-        /* Current PhD: teal-blue */
-        .b-phd { background: #1F6E7A; }
-        /* Programming: slate */
-        .b-prog { background: #4A5A6E; }
+        .b-acad-1 { background: #1B3A5C; } .b-acad-2 { background: #2C5478; }
+        .b-acad-3 { background: #3D6E94; } .b-acad-4 { background: #5088AE; }
+        .b-ind-1  { background: #2B6694; } .b-ind-2  { background: #6A9DC4; }
+        .b-phd    { background: #1F6E7A; } .b-prog   { background: #4A5A6E; }
 
         /* ─── COLLAPSIBLE ABOUT ─── */
-        .about-toggle {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            padding: 0.6rem 0;
-            border: none;
-            background: none;
-            width: 100%;
-            text-align: left;
-        }
-
-        .about-toggle:hover .section-title {
-            color: var(--color-accent);
-        }
-
-        .about-toggle .chevron {
-            width: 24px;
-            height: 24px;
-            color: var(--color-text-secondary);
-            transition: transform 0.35s ease;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .about-toggle.open .chevron {
-            transform: rotate(180deg);
-        }
-
-        .about-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.45s ease, opacity 0.35s ease;
-            opacity: 0;
-        }
-
-        .about-content.open {
-            max-height: 600px;
-            opacity: 1;
-        }
+        .about-toggle { display: flex; align-items: center; justify-content: space-between; cursor: pointer; padding: 0.6rem 0; border: none; background: none; width: 100%; text-align: left; }
+        .about-toggle:hover .section-title { color: var(--color-accent); }
+        .about-toggle .chevron { width: 24px; height: 24px; color: var(--color-text-secondary); transition: transform 0.35s ease; flex-shrink: 0; margin-left: 1rem; }
+        .about-toggle.open .chevron { transform: rotate(180deg); }
+        .about-content { max-height: 0; overflow: hidden; transition: max-height 0.45s ease, opacity 0.35s ease; opacity: 0; }
+        .about-content.open { max-height: 600px; opacity: 1; }
 
         /* ─── MOBILE ─── */
         @media (max-width: 768px) {
             .nav-toggle { display: block; }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(246, 243, 238, 0.97);
-                backdrop-filter: blur(16px);
-                flex-direction: column;
-                padding: 1.2rem 2rem 1.6rem;
-                gap: 1rem;
-                border-bottom: 1px solid var(--color-border);
-            }
-
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(246, 243, 238, 0.97); backdrop-filter: blur(16px); flex-direction: column; padding: 1.2rem 2rem 1.6rem; gap: 1rem; border-bottom: 1px solid var(--color-border); }
             .nav-links.open { display: flex; }
-
-            .hero {
-                min-height: auto;
-                padding: 8rem 1.5rem 4rem;
-            }
-
+            .hero { min-height: auto; padding: 8rem 1.5rem 4rem; }
             section { padding: 1.5rem 1.5rem 2.5rem; }
-
-            .research-areas {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-
-            .about-details {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-
-            .btn {
-                justify-content: center;
-            }
-
-            .contact-links {
-                flex-direction: column;
-            }
+            .research-areas { grid-template-columns: 1fr; gap: 1.2rem; }
+            .subproject-list { gap: 0.5rem; }
+            .about-details { grid-template-columns: 1fr; gap: 0; }
+            .hero-cta { flex-direction: column; }
+            .btn { justify-content: center; }
+            .contact-links { flex-direction: column; }
         }
-
         @media (max-width: 480px) {
             .hero-title { font-size: 1.9rem; }
             .nav-inner { padding: 0.8rem 1.2rem; }
@@ -767,8 +200,8 @@
         </button>
         <ul class="nav-links">
             <li><a href="#research" onclick="document.querySelector('.nav-links').classList.remove('open')">Research</a></li>
-            <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
-            <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
+            <li><a href="#about"    onclick="document.querySelector('.nav-links').classList.remove('open')">About</a></li>
+            <li><a href="#contact"  onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
         </ul>
     </div>
 </nav>
@@ -796,56 +229,119 @@
         <div class="section-label">Research in Progress</div>
         <h2 class="section-title" style="margin-bottom: 0.6rem;">Bridging Clinical Psychology, Developmental Science, and Human-Computer Interaction</h2>
         <p class="about-text" style="margin-bottom: 0;">Technology is reshaping how people connect, cope, and seek support. I study what that means for social functioning, development, and well-being.</p>
+
         <div class="research-areas" style="margin-top: 1.4rem;">
+
+            <!-- MA Thesis -->
             <div class="research-card" onclick="this.classList.toggle('card-open')">
                 <div class="research-card-header">
                     <div>
-                        <div class="work-type" style="margin-bottom: 0.3rem;">MA Thesis</div>
+                        <div class="work-type">MA Thesis</div>
                         <h3>Adolescent Generative AI Use and Social and Psychological Well-being</h3>
                     </div>
                     <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </div>
                 <div class="research-card-body">
-                    <p>My master's thesis uses survey data from over 3,000 younger adolescents to provide a population-level characterization of relational AI use and test preregistered hypotheses about whether social disconnection predicts virtual-friend genAI use and lower well-being predicts mental health genAI use.</p>
+                    <p>Uses Wave 2 survey data of early adolescents (N = 3,090) to provide a population-level characterization of relational AI use and test preregistered hypotheses about whether social disconnection and lower mental well-being predict virtual friend or mental health genAI use.</p>
+                    <div class="study-context">
+                        <button class="study-context-toggle" onclick="event.stopPropagation(); toggleContext(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            <a class="study-context-label-link" href="https://reporter.nih.gov/search/fD2J5oVq1k2VIH6mpAdsCA/project-details/11046306" target="_blank" rel="noopener" onclick="event.stopPropagation()">Data from the PACE Youth Study (R01MH138960)</a>
+                        </button>
+                        <div class="study-context-body">
+                            <p>NIH/NIMH; 2024–2029. PI: Candice Odgers, UCI; Co-I: Stephen Schueller. A longitudinal study following 3,090 population-representative North Carolina adolescents ages 10–15 across 4 annual survey waves and 3 EMA burst waves, with passive sensing, wearable data, and a youth co-created social media API toolkit.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- AIM -->
             <div class="research-card" onclick="this.classList.toggle('card-open')">
                 <div class="research-card-header">
                     <div>
-                        <div class="work-type" style="margin-bottom: 0.3rem;">Intensive Longitudinal Study</div>
+                        <div class="work-type">Co-Investigator · UCI SONA Study</div>
+                        <h3>AIM Mental Health: AI Use and Well-being in College Students</h3>
+                    </div>
+                    <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </div>
+                <div class="research-card-body">
+                    <p>A cross-sectional survey study (PI: Kit Wislocki; Faculty Sponsor: Dr. Schueller) characterizing how college students use generative AI for mental health and emotional support. Assesses AI use patterns, trust, preferences, and attitudes alongside validated measures of mental health, loneliness, and stigma.</p>
+                </div>
+            </div>
+
+            <!-- ILDA -->
+            <div class="research-card" onclick="this.classList.toggle('card-open')">
+                <div class="research-card-header">
+                    <div>
+                        <div class="work-type">Intensive Longitudinal Study</div>
                         <h3>Online Communication and Daily Peer Belonging in Early Adolescence</h3>
                     </div>
                     <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </div>
                 <div class="research-card-body">
-                    <p>This ecological momentary assessment study models within-person daily fluctuations in adolescents' communication with close others and sense of belongingness over 14-day EMA bursts. Disaggregates relationally-targeted communication from overall digital volume to understand what specifically matters for connection, with planned expansion to capture AI-directed communication.</p>
+                    <p>Models within-person daily fluctuations in adolescents' relational online communication and sense of peer belongingness using 14-day EMA data. Disaggregates relationally-targeted communication from overall digital volume to understand what specifically matters for adolescent social connection.</p>
+                    <div class="study-context">
+                        <button class="study-context-toggle" onclick="event.stopPropagation(); toggleContext(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            <a class="study-context-label-link" href="https://doi.org/10.1111/jora.12618" target="_blank" rel="noopener" onclick="event.stopPropagation()">Data from the NC Adolescent EMA Study</a>
+                        </button>
+                        <div class="study-context-body">
+                            <p>Jacobs Foundation & NICHD; 2016–2017. PI: Candice Odgers. A 14-day EMA study of 388 population-representative North Carolina adolescents reporting multiple times daily on technology use, parent-adolescent interactions, and mental health symptoms.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Few-Shot NLP -->
             <div class="research-card" onclick="this.classList.toggle('card-open')">
                 <div class="research-card-header">
                     <div>
-                        <div class="work-type" style="margin-bottom: 0.3rem;">Computational Research</div>
+                        <div class="work-type">Computational Research</div>
                         <h3>Few-Shot Classification of Help Seeking in Adolescent Texts</h3>
                     </div>
                     <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </div>
                 <div class="research-card-body">
-                    <p>This work focuses on developing few-shot classifiers to detect help-seeking, help-providing, and mental health content in 90 days of naturalistic adolescent typed text (over 700,000 entries and nearly 3 million words). Addresses a core methodological challenge: relevant signals are sparse yet potentially consequential for understanding youth well-being.</p>
+                    <p>Developing few-shot classifiers to detect help-seeking, help-providing, and mental health content in 90 days of naturalistic adolescent typed text (over 700,000 entries and nearly 3 million words). Addresses a core methodological challenge: relevant signals are sparse yet potentially consequential for understanding youth well-being.</p>
+                    <div class="study-context">
+                        <button class="study-context-toggle" onclick="event.stopPropagation(); toggleContext(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            <a class="study-context-label-link" href="https://reporter.nih.gov/search/fD2J5oVq1k2VIH6mpAdsCA/project-details/11046306" target="_blank" rel="noopener" onclick="event.stopPropagation()">Data from the PACE Youth Study (R01MH138960)</a>
+                        </button>
+                        <div class="study-context-body">
+                            <p>NIH/NIMH; 2024–2029. PI: Candice Odgers, UCI; Co-I: Stephen Schueller. A longitudinal study following 3,090 population-representative North Carolina adolescents ages 10–15 across 4 annual survey waves and 3 EMA burst waves, with passive sensing, wearable data, and a youth co-created social media API toolkit.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+        </div><!-- /research-areas row 1+2 -->
+
+        <!-- DevWB — full width -->
+        <div class="research-areas research-areas-single" style="margin-top: 1.2rem;">
             <div class="research-card" onclick="this.classList.toggle('card-open')">
                 <div class="research-card-header">
                     <div>
-                        <div class="work-type" style="margin-bottom: 0.3rem;">Applied Project</div>
+                        <div class="work-type">Applied Project</div>
                         <h3>Developer Well-Being Reflection Tool</h3>
                     </div>
                     <svg class="card-chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
                 </div>
                 <div class="research-card-body">
-                    <p>A journaling tool for software developers grounded in Self-Determination Theory (SDT). Designed to support structured reflection on work experiences, supported by AI feedback and data summaries.</p>
+                    <p>A journaling tool for software developers grounded in Self-Determination Theory (SDT), designed to support structured daily reflection on autonomy, competence, and relatedness at work, supported by AI feedback and data summaries.</p>
+                    <div class="study-context">
+                        <button class="study-context-toggle" onclick="event.stopPropagation(); toggleContext(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                            <a class="study-context-label-link" href="https://www.nsf.gov/awardsearch/show-award/?AWD_ID=2326489&HistoricalAwards=false" target="_blank" rel="noopener" onclick="event.stopPropagation()">Improving the Mental Well-being and Productivity of the Software Development Workforce of Tomorrow (NSF FW-HTF-RL 2326489)</a>
+                        </button>
+                        <div class="study-context-body">
+                            <p>NSF Future of Work at the Human-Technology Frontier; $1.64M; 2023–2027. PI: André van der Hoek; Co-PIs: Iftekhar Ahmed, Madhu Reddy, Stephen Schueller (all UCI). Examines how software development tools affect developer mental well-being and productivity, using Self-Determination Theory to develop and evaluate novel tool prototypes with industry partners.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-         </div>
+        </div><!-- /devwb -->
+
         <div style="margin-top: 2rem; text-align: center;">
             <a href="https://scholar.google.com/citations?user=Fr7rGiAAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -854,6 +350,8 @@
         </div>
     </div>
 </section>
+
+<!-- ─── ABOUT ─── -->
 <section id="about">
     <div class="section-inner reveal">
         <div class="section-label">About</div>
@@ -910,9 +408,9 @@
 <section id="contact">
     <div class="section-inner reveal">
         <div class="section-label">Let's Connect</div>
-        <p class="about-text">I'm always interested in conversations about the intersection of technology and mental health, collaborative research opportunities, or questions about my work.  
+        <p class="about-text">I'm always interested in conversations about the intersection of technology and mental health, collaborative research opportunities, or questions about my work.</p>
         <div class="contact-links">
-            <a href="mailto:se.stoeckl@uci.edu" class="contact-link">
+            <a href="/cdn-cgi/l/email-protection#c9baace7babda6acaaa2a589bcaaa0e7acadbc" class="contact-link">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 Email
             </a>
@@ -920,27 +418,23 @@
     </div>
 </section>
 
-<footer>
-    &copy; 2026 SE Stoeckl.
-</footer>
+<footer>&copy; 2026 SE Stoeckl.</footer>
 
-<script>
-    // Nav scroll effect
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     window.addEventListener('scroll', () => {
         document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
 
+    function toggleContext(btn) {
+        btn.classList.toggle('open');
+        const body = btn.nextElementSibling;
+        body.classList.toggle('open');
+    }
+</script>
 </body>
 </html>
